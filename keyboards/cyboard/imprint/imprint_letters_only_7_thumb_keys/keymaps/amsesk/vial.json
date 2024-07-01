@@ -82,6 +82,11 @@
             "name": "TidyPipe",
             "title": "Echo %>%",
             "shortName": "TIDYP"
+        },
+        {
+            "name": "Chunk",
+            "title": "Echo # %%",
+            "shortName": "CHNK"
         }
     ],
     "matrix": {

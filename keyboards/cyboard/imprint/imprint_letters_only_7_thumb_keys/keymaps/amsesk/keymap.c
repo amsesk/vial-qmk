@@ -87,3 +87,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______, _______,         _______, _______, _______, _______
     )
 };
+
+enum custom_keycodes {
+    PATHB = QK_KB_16,
+    PATHH = QK_KB_17,
+    TIDYP = QK_KB_18,
+    CHNK = QK_KB_19,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case PATHB:
+            if (record->event.pressed) {
+                send_string("../");
+            }
+            return false;
+        case PATHH:
+            if (record->event.pressed) {
+                send_string("~/");
+            }
+            return false;
+        case TIDYP:
+            if (record->event.pressed) {
+                send_string("%>%");
+            }
+            return false;
+        case CHNK:
+            if (record->event.pressed) {
+                send_string("# %%");
+            }
+            return false;
+        default:
+            return true;
+    }
+}
